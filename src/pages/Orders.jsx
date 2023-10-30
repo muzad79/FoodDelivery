@@ -5,7 +5,7 @@ const Orders = () => {
     const [orders,setOrders] = useState([])
     useEffect(()=>{
 
-        axios.post('http://localhost:3000/orders/get',{
+        axios.post(`${import.meta.env.VITE_API_BASE_URL}/orders/get`,{
             email:localStorage.getItem('email')
         })
         .then((response)=>{

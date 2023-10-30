@@ -12,7 +12,7 @@ const Home = () => {
     const [search,setSearch]= useState("")
 
     useEffect(() => {
-        axios.get("http://localhost:3000")
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}`)
             .then((response) => {
                 setFoodItems(response.data.foodData)
                 setFoodCategory(response.data.foodCategory)

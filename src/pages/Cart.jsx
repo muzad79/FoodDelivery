@@ -13,7 +13,7 @@ const Cart = () => {
     let totalPrice =state.reduce((total,food)=>total+food.price,0)
 
     function handleCheckout(){
-        axios.post('http://localhost:3000/orders',{
+        axios.post(`${import.meta.env.VITE_API_BASE_URL}/orders`,{
             email:localStorage.getItem('email'),
             orders:state,
             date:new Date().toDateString()

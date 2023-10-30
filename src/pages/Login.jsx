@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     localStorage.setItem('email',email)
-    axios.post("http://localhost:3000/user/login",{
+    axios.post(`${import.meta.env.VITE_API_BASE_URL}/login`,{
       email:email,
       password:password,
 
